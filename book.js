@@ -16,23 +16,21 @@ const failedAlert = document.querySelector('.booking-alert3');
 bookingForm.addEventListener('submit', bookWithPaystack);
 
 //change price automatically on click
-service.addEventListener('click', (e) => {
-  if(e.target.value === 'adult session'){
-    amount.value = 50000
-  } 
-  else if 
-  (e.target.value === 'infant session'){
-    amount.value = 70000
-  }
-  else if 
-  (e.target.value === 'family session'){
-    amount.value = 100000
-  }
-  else if 
-  (e.target.value === 'maternity session'){
-    amount.value = 80000
-  }
-})
+service.addEventListener('click', getPrice);
+
+function getPrice(e) {
+  setInterval(() => {
+    if (e.target.value === 'adult session') {
+      amount.value = 50000;
+    } else if (e.target.value === 'infant session') {
+      amount.value = 70000;
+    } else if (e.target.value === 'family session') {
+      amount.value = 100000;
+    } else if (e.target.value === 'maternity session') {
+      amount.value = 80000;
+    }
+  }, 1000);
+}
 
 
 //booking function
