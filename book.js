@@ -12,9 +12,6 @@ const excludeSunday = document.querySelector('.booking-alert');
 const successAlert = document.querySelector('.booking-alert2');
 const failedAlert = document.querySelector('.booking-alert3');
 
-//set amount
-amount.value = 50000;
-
 //eventListener
 bookingForm.addEventListener('submit', bookWithPaystack);
 
@@ -100,9 +97,6 @@ function bookWithPaystack(e){
     
     //reset form after submiting
     bookingForm.reset(); 
-
-    //set amount to adult price
-    amount.value = 50000;
   }
   
   e.preventDefault();
